@@ -46,7 +46,7 @@ level08@SnowCrash:~$ nm level08
          U write@@GLIBC_2.0
 ```
 
-The function `strstr` searches a sub-string so it will probably search in the file name. A way to access a file with another name without modify it is to create a hard link:
+The function `strstr` searches a sub-string so it will probably search in the file name. A way to access a file with another name without modify it is to create a soft link:
 
 ``` shell
 level08@SnowCrash:~$ ln -s /home/user/level08/token /tmp/not_nekot && ./level08 /tmp/not_nekot
