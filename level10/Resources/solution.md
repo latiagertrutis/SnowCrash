@@ -43,7 +43,7 @@ done
 
 ``` shell
 while true; do
-    ./level10 /tmp/dummy 192.168.1.18;
+    ./level10 /tmp/dummy /path/to/your/host;
 done
 ```
 
