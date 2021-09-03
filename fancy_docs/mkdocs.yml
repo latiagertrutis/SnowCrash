@@ -1,0 +1,5 @@
+site_name: SnowCrash Fancy Documentation
+use_directory_urls: false
+theme:
+  name: material
+  logo: assets/david.png
